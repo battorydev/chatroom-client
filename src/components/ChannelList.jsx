@@ -1,20 +1,20 @@
-import React from 'react'
+import React from "react";
+// import PropTypes from 'prop-types'
+import ChannelItem from "./ChannelItem";
 
-function DeviceList({devices}) {
-
+function ChannelList({ channels, setChannel }) {
   return (
-    <div>
-        {devices.length}
-        <ul>
-            {
-              console.log(devices)
-            }
-            {
-            devices.map( (d) => <li key="{d}">{d}</li>)
-            }
-        </ul>
-    </div>
-  )
+    <ul>
+      {channels.map((channel) => {
+        <ChannelItem channel={channel} setChannel={setChannel }/>;
+      })}
+    </ul>
+  );
 }
 
-export default DeviceList
+// ChannelList.propTypes = {
+//   channels: React.PropTypes.array.isRequired,
+//   setChannel: React.PropTypes.func.isRequired
+// };
+
+export default ChannelList;

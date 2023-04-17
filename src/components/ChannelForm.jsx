@@ -1,28 +1,28 @@
-import React, {useState} from 'react'
+import React, {useRef, useState} from 'react'
+// import PropTypes from 'prop-types'
 
-function AddDevice({add}) {
+function ChannelForm({addChannel}) {
 
-  const [title, setTitle] = useState('');
+  const channelText = useRef();
 
-  function onChange(e){
-    setTitle(e.target.value);
-    console.log('change;' + e.target.value + ';' + title);
-  }
-
-  function handleKeyDown(e){
-    if (e.key === 'Enter') {
-      console.log("enter");
-      add(title);     
-    }
-    setTitle(title);
-    console.log('keydown;' + e.target.value + title);
+  function onSubmit(e){
+    e.preventDefault();
+    
+    const node = channelText.current;
+    const channelName = node.value;
+    addChannel(channelName);
+    node.value = ''; // clear value
   }
 
   return (
-    <div>
-        <input type="text" placeholder="Title" onChange={onChange} onKeyDown={handleKeyDown} value={title} />
-    </div>
+    <form onSubmit={onSubmit}>
+        <input type="text" ref={channelText} placeholder="Title" />
+    </form>
   )
 }
 
-export default AddDevice
+// ChannelForm.propType = {
+//   addChannel: React.PropTypes.func.isRequired
+// }
+
+export default ChannelForm

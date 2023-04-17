@@ -1,23 +1,28 @@
 import React, {useState} from 'react'
+// import PropTypes from 'prop-types'
 import ChannelForm from './ChannelForm'
 import ChannelList from './ChannelList'
 
 function ChannelSection() {
 
-  const [devices, setDevices] = useState([]);
-
-  function addDevice(name){
-    devices.push(name);
-    setDevices(devices);
-    console.log('added device. ' + name + ' ' + devices.length);
+  function addChannel(name){
+    
+    console.log(name);
+    // TODO send to server
   }
 
   return (
     <div>
-        <ChannelForm add={addDevice}/>
-        <ChannelList devices={devices} />
+        <ChannelList  channels={[]}/>
+        <ChannelForm addChannel={addChannel} />
     </div>
   )
 }
+
+// ChannelSection.propTypes = {
+//   channels: React.PropTypes.array.isRequired,
+//   setChannel: React.PropTypes.func.isRequired,
+//   addChannel: React.PropTypes.func.isRequired
+// }
 
 export default ChannelSection

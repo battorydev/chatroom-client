@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 function ChannelForm({addChannel}) {
 
@@ -21,8 +21,8 @@ function ChannelForm({addChannel}) {
   )
 }
 
-// ChannelForm.propType = {
-//   addChannel: React.PropTypes.func.isRequired
-// }
+ChannelForm.propType = {
+  addChannel: PropTypes.func.isRequired
+}
 
 export default ChannelForm

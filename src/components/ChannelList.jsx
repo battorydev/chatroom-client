@@ -1,5 +1,5 @@
 import React from "react";
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import ChannelItem from "./ChannelItem";
 
 function ChannelList({ channels, setChannel }) {
@@ -12,9 +12,9 @@ function ChannelList({ channels, setChannel }) {
   );
 }
 
-// ChannelList.propTypes = {
-//   channels: React.PropTypes.array.isRequired,
-//   setChannel: React.PropTypes.func.isRequired
-// };
+ChannelList.propTypes = {
+  channels: PropTypes.array.isRequired,
+  setChannel: PropTypes.func.isRequired
+};
 
 export default ChannelList;

@@ -1,5 +1,5 @@
 import React from "react";
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 function ChannelItem(channel, setChannel) {
   function onClick(e) {
@@ -13,10 +13,10 @@ function ChannelItem(channel, setChannel) {
   );
 }
 
-// ChannelItem.propTypes = {
-//     channel: React.PropTypes.object.isRequired,
-//     setChannel: React.PropTypes.func.isRequired
-// };
+ChannelItem.propTypes = {
+    channel: PropTypes.object.isRequired,
+    setChannel: PropTypes.func.isRequired
+};
     
 
 export default ChannelItem;

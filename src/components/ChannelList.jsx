@@ -6,7 +6,7 @@ function ChannelList({channels, displayActiveChannel}) {
 
   return (
     <ul>
-      {console.log("rendering ChannelForm")}  
+      {console.log("rendering ChannelList")}  
       {console.log(channels.length)} 
 
       {channels.map((ch) => {

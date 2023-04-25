@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types'
 import ChannelItem from "./ChannelItem";
 
-function ChannelList({channels}) {
+function ChannelList({channels, displayActiveChannel}) {
 
   return (
     <ul>
@@ -11,7 +11,7 @@ function ChannelList({channels}) {
 
       {channels.map((ch) => {
         console.log(ch);
-        return (<ChannelItem key={ch.id} channel={ch}/>);
+        return (<ChannelItem key={ch.id} channel={ch} displayActiveChannel={displayActiveChannel}/>);
       })}
  
     </ul>
@@ -19,7 +19,8 @@ function ChannelList({channels}) {
 }
 
 ChannelList.propTypes = {
-  channels: PropTypes.array.isRequired
+  channels: PropTypes.array.isRequired,
+  displayActiveChannel: PropTypes.func.isRequired
 };
 
 export default ChannelList;

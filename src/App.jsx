@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import ChannelSection from './components/ChannelSection'
+import ChatWindow from './components/ChatWindow'
 
 function App() {
   let [channels, setChannels] = useState([]);
+  let [activeChannel, setActiveChannel] = useState({});
+  
 
   function addChannel(name){
     
@@ -18,11 +19,19 @@ function App() {
     // TODO send to server
   }
 
+  function displayActiveChannel(channel) {
+    console.log("setActiveChannel: " + channel);
+    setActiveChannel(channel);
+  }
+
   return (
-    <>
+    <div className='app'>
     {console.log("rerendering: App")}
-      <ChannelSection channels={channels} addChannel={addChannel}/>
-    </>
+      <div className='nav'>
+        <ChannelSection channels={channels} addChannel={addChannel} displayActiveChannel={displayActiveChannel}/>
+      </div>
+      <ChatWindow channel={activeChannel} />
+    </div>
   )
 }
 

@@ -1,21 +1,22 @@
 import React from "react";
 import PropTypes from 'prop-types'
 
-function ChannelItem(channel, setChannel) {
-  function onClick(e) {
-    e.preventDefault();
-    setChannel(channel);
+function ChannelItem({channel}) {
+
+  function onClick() {
+    //console.log(typeof ch);
   }
+
   return (
     <li>
-      <a onClick={onClick(this)}>{channel.name}</a>
+      {console.log("rerendering Item: " + channel + " ||")}
+      <a onClick={onClick}>{channel.name}</a>
     </li>
   );
 }
 
 ChannelItem.propTypes = {
-    channel: PropTypes.object.isRequired,
-    setChannel: PropTypes.func.isRequired
+    channel: PropTypes.object.isRequired
 };
     
 

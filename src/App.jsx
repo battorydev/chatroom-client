@@ -5,11 +5,23 @@ import './App.css'
 import ChannelSection from './components/ChannelSection'
 
 function App() {
-  const [count, setCount] = useState(0)
+  let [channels, setChannels] = useState([]);
+
+  function addChannel(name){
+    
+    console.log("addch is called. " + name);
+    console.log(typeof channels);
+    channels = [...channels]
+    channels.push({id: channels.length, name});
+
+    setChannels(channels);
+    // TODO send to server
+  }
 
   return (
     <>
-      <ChannelSection />
+    {console.log("rerendering: App")}
+      <ChannelSection channels={channels} addChannel={addChannel}/>
     </>
   )
 }

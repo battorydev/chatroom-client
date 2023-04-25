@@ -1,25 +1,23 @@
 import React, {useState} from 'react'
+import PropTypes from 'prop-types'
 import ChannelForm from './ChannelForm'
 import ChannelList from './ChannelList'
 
-function ChannelSection() {
-
-  function addChannel(name){
-    
-    console.log(name);
-    // TODO send to server
-  }
-
-  function setChannel(activeChannel){
-    console.log(activeChannel);
-  }
+function ChannelSection({channels, addChannel}) {
 
   return (
     <>
-        <ChannelList channels={[]} setChannel={setChannel}/>
+        {console.log("rerendering: ChannelSection. Channel size:" + channels.length)}
+
+        <ChannelList channels={channels} />
         <ChannelForm addChannel={addChannel} />
     </>
   )
 }
+
+ChannelSection.propTypes = {
+  channels: PropTypes.array.isRequired,
+  addChannel: PropTypes.func.isRequired
+};
 
 export default ChannelSection

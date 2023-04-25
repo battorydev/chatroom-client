@@ -16,14 +16,17 @@ function ChatWindow({channel}) {
     }
 
   return (
-    <div>
-        <div>ChatWindow: {channel ? channel.name : ""}</div>
-        {console.log("rerendering ChatWindow Ch:" + channel)}
-        <div>
-            <ChatMessage messages={messages}/>
-            <ChatTypeForm addMessage={addMessage} />
+    <>
+        <div className='panel-heading'>ChatWindow: {channel ? channel.name : ""}</div> 
+        <div className='panel-body messages-container'>
+            {   console.log("rerendering ChatWindow Ch:" + channel)}
+        
+           <div className='messages'>
+                <ChatMessage messages={messages}/>   
+                <ChatTypeForm addMessage={addMessage} /> 
+            </div>
         </div>
-    </div>
+    </>
   )
 }
 

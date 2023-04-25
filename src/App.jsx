@@ -41,7 +41,9 @@ function App() {
         <ChannelSection channels={channels} addChannel={addChannel} displayActiveChannel={displayActiveChannel}/>
         <UsersSection users={users} addUser={addUser}/>
       </div>
+      <div className='container'>
       <ChatWindow channel={activeChannel} />
+      </div>
     </div>
   )
 }

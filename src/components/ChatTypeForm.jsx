@@ -12,7 +12,6 @@ function ChatTypeForm({addMessage}) {
 
   return (
     <>
-    <div>ChatTypeForm</div>
     <form onSubmit={onSubmit}>
         <div className="form-group">
             <input type="text" className="form-control" ref={msgRef} placeholder='Add Message...'/>

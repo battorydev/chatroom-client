@@ -3,24 +3,19 @@ import PropTypes from 'prop-types'
 
 function ChannelForm({addChannel}) {
 
-  const [text, setText] = useState("");
+  const textRef = useRef();
 
   function onSubmit(e){
-    e.preventDefault();
-    
-    addChannel(text);
-    setText("");
-  }
-
-  function updateText(e){
-    setText(e.target.value);
+    e.preventDefault(); 
+    addChannel(textRef.current.value);
+    textRef.current.value = "";
   }
 
   return (
     <>
       <form onSubmit={onSubmit}>
         {console.log("rerendering ChannelForm")}
-          <input type="text" value={text} onChange={updateText} placeholder="Title" />
+          <input type="text" ref={textRef} placeholder="Title" />
       </form>
     </>
   )

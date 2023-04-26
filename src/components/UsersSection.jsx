@@ -5,11 +5,11 @@ import UserForm from './UserForm'
 function UsersSection({users, addUser}) {
 
   return (
-    <div className='support panel panel-primary'>
-      <div className='panel-heading'>
+    <div className='support card nav-light'>
+      <div className='card-header'>
           Users{console.log("rerendering: UsersSection. Users size:")}
       </div>
-      <div className='panel-body users'>
+      <div className='card-body users'>
         <UserList users={users}/>
         <UserForm addUser={addUser}/>
       </div>

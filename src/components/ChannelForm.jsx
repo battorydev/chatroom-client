@@ -16,7 +16,7 @@ function ChannelForm({addChannel}) {
       <form onSubmit={onSubmit}>
         <div className="form-group">
           {console.log("rerendering ChannelForm")}
-          <input className='form-control' type="text" ref={textRef} placeholder="Title" />
+          <input className='form-control' type="text" ref={textRef} placeholder="Create Channel" />
         </div>
       </form>
     </>

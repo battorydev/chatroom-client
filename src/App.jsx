@@ -37,12 +37,14 @@ function App() {
   return (
     <div className='app'>
     {console.log("rerendering: App")}
-      <div className='nav'>
+      <div className='navbar'>
         <ChannelSection channels={channels} addChannel={addChannel} displayActiveChannel={displayActiveChannel}/>
         <UsersSection users={users} addUser={addUser}/>
       </div>
-      <div className='container'>
-      <ChatWindow channel={activeChannel} />
+      <div className='container-fluid p-0 card'>
+        
+          <ChatWindow channel={activeChannel} />
+        
       </div>
     </div>
   )

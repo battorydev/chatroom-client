@@ -6,11 +6,11 @@ import ChannelList from './ChannelList'
 function ChannelSection({channels, addChannel, displayActiveChannel}) {
 
   return (
-    <div className='support panel panel-primary'>
-      <div className='panel-heading'>
+    <div className='support card'>
+      <div className='card-header'>
           Channels{console.log("rerendering: ChannelSection. Channel size:" + channels.length)}
       </div>
-      <div className='panel-body channels'>
+      <div className='card-body channels'>
         <ChannelList channels={channels} displayActiveChannel={displayActiveChannel} />
         <ChannelForm addChannel={addChannel} />
       </div>
